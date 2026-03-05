@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bhavya 🎀</title>
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+height:100vh;
+overflow:hidden;
+background: linear-gradient(-45deg,#ffd6ec,#ffeaf6,#ffc1e3,#ffb6d9,#ff99cc);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* Animated Typing Text */
+.animated-text{
+font-family:'Pacifico',cursive;
+font-size:24px;
+color:#ff2e8a;
+white-space:nowrap;
+overflow:hidden;
+border-right:3px solid #ff2e8a;
+width:0;
+animation:typing 3s steps(30,end) forwards, blink 0.8s infinite;
+margin-bottom:15px;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+@keyframes blink{
+0%{border-color:#ff2e8a;}
+50%{border-color:transparent;}
+100%{border-color:#ff2e8a;}
+}
+
+/* Gradient Animation */
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Floating Hearts */
+.heart{
+position:fixed;
+bottom:-20px;
+animation:floatUp linear forwards;
+pointer-events:none;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0) scale(1);opacity:1;}
+100%{transform:translateY(-100vh) scale(1.6);opacity:0;}
+}
+
+/* Front Page */
+.intro{text-align:center;}
+
+.card{
+background: rgba(255,255,255,0.25);
+backdrop-filter: blur(10px);
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 35px rgba(0,0,0,0.15);
+}
+
+.main-title{
+font-size:36px;
+color:#ff1493;
+text-shadow:0 0 15px #ff69b4;
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle{
+color:#d63384;
+margin-top:15px;
+font-size:18px;
+}
+
+.start-btn{
+margin-top:25px;
+padding:15px 30px;
+background:linear-gradient(45deg,#ff69b4,#ff1493);
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.start-btn:hover{
+transform:scale(1.08);
+box-shadow:0 8px 20px rgba(255,20,147,0.4);
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #ff69b4;}
+to{text-shadow:0 0 30px #ff1493;}
+}
+
+/* Book */
+.book{
+position:relative;
+width:90%;
+max-width:350px;
+height:500px;
+perspective:2000px;
+display:none;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+background:white;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transform-origin:left;
+transition:transform 1s;
+backface-visibility:hidden;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:20px;
+box-sizing:border-box;
+}
+
+.page img{
+width:200px;
+height:200px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.page h2{
+color:#ff1493;
+text-align:center;
+font-size:16px;
+}
+
+.arrow{
+position:absolute;
+bottom:15px;
+right:20px;
+font-size:28px;
+cursor:pointer;
+}
+
+.flipped{
+transform:rotateY(-180deg);
+}
+</style>
+</head>
+
+<body>
+
+<div class="intro" id="intro">
+<div class="card">
+<h2 class="animated-text">Happy Birthday Bhavya 💕</h2>
+<button class="start-btn" onclick="openBook()">✨ Open Your Special Book ✨</button>
+</div>
+</div>
+
+<div class="book" id="book">
+
+<!-- 11 Pages With Proper z-index -->
+<div class="page" style="z-index:11;" id="page1">
+<img src="photo1.jpg">
+<h2>Hey 8808's🎀!! u know wt </h2>
+<div class="arrow" onclick="nextPage(1)">👉</div>
+</div>
+
+<div class="page" style="z-index:10;" id="page2">
+<img src="photo2.jpg">
+<h2> Roses are red 💖</h2>
+<div class="arrow" onclick="nextPage(2)">👉</div>
+</div>
+
+<div class="page" style="z-index:9;" id="page3">
+<img src="photo3.jpg">
+<h2> Sky is blue</h2>
+<div class="arrow" onclick="nextPage(3)">👉</div>
+</div>
+
+<div class="page" style="z-index:8;" id="page4">
+<img src="photo4.jpg">
+<h2>I just wanted to say 🎙</h2>
+<div class="arrow" onclick="nextPage(4)">👉</div>
+</div>
+
+<div class="page" style="z-index:7;" id="page5">
+<img src="photo5.jpg">
+<h2> I LOVE YOU 😚💖 </h2>
+<div class="arrow" onclick="nextPage(5)">👉</div>
+</div>
+
+<div class="page" style="z-index:6;" id="page6">
+<img src="photo6.jpg">
+<h2>Always stay this cute 💩🌷</h2>
+<div class="arrow" onclick="nextPage(6)">👉</div>
+</div>
+
+<div class="page" style="z-index:5;" id="page7">
+<img src="photo7.jpg">
+<h2>You make my life brighter 💕</h2>
+<div class="arrow" onclick="nextPage(7)">👉</div>
+</div>
+
+<div class="page" style="z-index:4;" id="page8">
+<img src="photo8.jpg">
+<h2>Stay the same adorable soul 👑</h2>
+<div class="arrow" onclick="nextPage(8)">👉</div>
+</div>
+
+<div class="page" style="z-index:3;" id="page9">
+<img src="photo9.jpg">
+<h2> TO: </h2>
+<div class="arrow" onclick="nextPage(9)">👉</div>
+</div>
+
+<div class="page" style="z-index:2;" id="page10">
+<img src="photo10.jpg">
+<h2> TO: My forever person 🎀</h2>
+<div class="arrow" onclick="nextPage(10)">👉</div>
+</div>
+
+<div class="page" style="z-index:1;" id="page11">
+<img src="photo11.jpg">
+<h2>
+ you’ve filled my life with so much happiness and warmth.  
+Thank u for coming in my life 🙇‍♀️🌷
+Love u more 💙  
+</h2>
+</div>
+
+</div>
+
+<script>
+function openBook(){
+document.getElementById("intro").style.display="none";
+document.getElementById("book").style.display="block";
+}
+
+function nextPage(pageNumber){
+
+// If it's the letter page
+if(pageNumber === 'letterPage'){
+document.getElementById("letterPage").classList.add("flipped");
+return;
+}
+
+// Normal pages
+let page = document.getElementById("page"+pageNumber);
+if(page){
+page.classList.add("flipped");
+}
+
+// When page10 flips → trigger letter fade
+if(pageNumber === 11){
+setTimeout(()=>{
+document.querySelector(".letter-content").classList.add("fade-in");
+},800);
+}
+}
+
+/* Floating Hearts */
+setInterval(() => {
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML=["💖","🎈","🔅","❣️"][Math.floor(Math.random()*4)];
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*15+15)+"px";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},600);
+</script>
+
+</body>
+</html>
+
+
